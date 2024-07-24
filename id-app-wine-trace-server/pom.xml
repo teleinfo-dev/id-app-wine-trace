@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.3</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>id.demo</groupId>
+    <artifactId>id-wine-trace-demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>id-wine-trace-demo</name>
+    <description>Demo project for Spring Boot</description>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>2021.0.5</version> <!-- 请使用与Spring Boot版本兼容的最新版本 -->
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <!--    企业节点SDK依赖     -->
+        <dependency>
+            <groupId>cn.teleinfo</groupId>
+            <artifactId>id-sdk-impl</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <!--    openfeign     -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <!--    工具类包     -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.28</version>
+        </dependency>
+        <!--    springboot     -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>teleinfo-releases</id>
+            <name>teleinfo-releases</name>
+            <url>https://teleinfo.abluepoint.com:9443/nexus/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>teleinfo-snapshots</id>
+            <name>teleinfo-snapshots</name>
+            <url>https://teleinfo.abluepoint.com:9443/nexus/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.3.1</version>
+                <configuration>
+                    <from>
+                        <image>dockerhub.qingcloud.com/idpointer/java:8</image>
+                    </from>
+                    <to>
+                        <image>dockerhub.qingcloud.com/idpointer/id-wine</image>
+                    </to>
+                    <!--容器相关的属性-->
+                    <container>
+                        <!--jvm内存参数-->
+                        <environment>
+                            <JAVA_OPTS>-Xms4g -Xmx4g -Xss512k</JAVA_OPTS>
+                        </environment>
+                        <entrypoint>
+                            <arg>/bin/bash</arg>
+                            <arg>-c</arg>
+                            <!--suppress UnresolvedMavenProperty -->
+                            <arg>java ${JAVA_OPTS} -Duser.timezone=PRC -cp /app/resources/:/app/classes/:/app/libs/* id.demo.DemoApplication</arg>
+                        </entrypoint>
+                        <ports>
+                            <port>80</port>
+                        </ports>
+                        <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+                    </container>
+                    <allowInsecureRegistries>true</allowInsecureRegistries>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

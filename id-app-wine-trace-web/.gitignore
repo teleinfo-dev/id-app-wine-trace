@@ -1,0 +1,12 @@
+node_modules
+other_modules
+.vscode
+.vscode-test
+out
+build
+/dist
+.cache
+# pnpm-lock.yaml
+yarn.lock
+package-lock.json
+.DS_Store

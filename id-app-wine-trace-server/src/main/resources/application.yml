@@ -1,0 +1,32 @@
+server:
+  port: 8000
+# 企业节点配置    
+app:
+  idhub: 
+    url: https://idhub-manage-a-qa.idx.space/
+    handle-user: 88.608.24061301/App_12306
+    private-key: |-
+      -----BEGIN PRIVATE KEY-----
+      MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCNa+oluRrSLGPNki9357nuxQkL
+      t8jLWb5FieYJsG5qAk040nXmJpe2GpJLeTyfwyuZy1lE0yhYzMPk57bZg8v1z3zttKD17jVaSK8H
+      ono7alD9i1z7r0AXdaHjy5QivW3CORiiZLdqRvaBh+P5KXHwzAj+WJV7xc4lulsoPkpQfTJXcK6g
+      mPSlISabtgexd/U4lipykKZ7BOhQzJQ+qTorEG8auYMreDykPnDizJMzCqV89roQcW0R4AiSgE7y
+      XYWJkdY70w87Io4Lh2uzOzn8i15yAi3GEEztYkSE9T2FzTb9RGahwGmsw3L5Hy20Op/ae2IFgjQW
+      XdosncmtEj/1AgMBAAECggEBAISLQs2OOkwHXJa7zw9zOHlHZB3+ZwvnlYP5JYepOyLR+2wpHGTT
+      gNck+j4QZ7hYpJGk24q82RC5AVSVs3MTqmI80Bq9cypr0sdGXf0q06LCFxw6tLAS5V/XWR51m+Yf
+      YjJpbuQsvxa1Ya2vHgRVSrvjjv5LKfbyQi5sBamnD+F0vqu68OgnfUtTBybgqvf1u2lsotXDJA7u
+      ft4t9NkIWd7Z1pvA/3wVnA34v/3clF7Mp701kOpn6AWCGsArbHXdtkD23dpr8P2giKvAbDSuMDvy
+      pNpeiVWQ1xtEjphGJL/hCJYW/lpvGtQYFBk4OXtFkxZQf2ld9HcffmcmeXNzWOECgYEA1AWMsXXZ
+      BdGdOYzwcNLsBpvzgj1jht+yMzzVG9BvoWCwgZyct3juLJjFVD57Ijv6DrNaw0jp84e9OtI/2zQz
+      U41lrftC1TvvUhvO+Shn/tSBahl8i4uGEaH3oVeWLBoFY4rjXbTQrNuz4IZsXzX/PPb+iiX/D8qu
+      wxEC8kUzAvkCgYEAqsF2+Qg4zD4QdoEkSGhRvlxALcFpN0Ev/6IgqS+Oi7YIZbxl5OMrRft5QPUr
+      5HU9xBRtvPjMOJ6x/gRx5YGluYpi5v3EP2AKmc6ZM5MOD2og5i74rNO3B1nBWGYfGao1AzfDuy1f
+      i+xRmh6oPhBFq8SAbK+H4q1aUZvclyeq590CgYBzZ3HlRhgSqr3BjY1yW9xM3KX2xiNeTnRYn0wA
+      D7wzQsXQRsamtxQtAhqmeDvdrne1eLp2gUGWZNQDKF3Jmug1Gkm2IYWHO1BQiQJnbC7u7gxjC+xW
+      qGMZRefb0ijTaHZ2cCrB3qGW9R87nu9uA54iOO7jkzr6BYCKfL/1zuStQQKBgAJToohgKU33JohG
+      2DS4XyzF2wYEladwFvRXxDQp9rpGn7SrLYRB6CwK8isFbDSvuEi8soYZqca3utsoOlkTPCvcC97z
+      5EGs0FgqLYI7ZbymCI66Yx8Pv3W1LmJC+feCjzhdASjCxIOGk9ISyt4VoK1nfwx8E9Dt5cYo5oeU
+      vcptAoGAANLM52h5IZuGYAAuJ5ooGJ6D+TZk2DIqRxFuGOFHug4dw3Q9+XRsv0bVKnQDtXpL66+P
+      OwSz3qtNJFT6sn9gbfX6H+mtCagne5ag7BhMn/hExMd6fehPljsWN2S7SpKUXZR4b2afv0QIPLlP
+      kf53PHONkbQChxas0Q2/iU21Oc4=
+      -----END PRIVATE KEY-----
