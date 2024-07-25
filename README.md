@@ -12,13 +12,14 @@
 
 2. 该追溯大屏，通过企业节点，模拟打通酒行业的全业务流程
     
-    ![追溯大屏](https://github.com/teleinfo-dev/id-app-wine-trace/blob/main/flow.png)
+    ![追溯大屏](./images/flow.png)
 
 3. 模拟打通 生产系统、仓储系统、营销系统，实现酒行业4个大环节、14个小环节的贯通
     
-    ![追溯大屏](https://github.com/teleinfo-dev/id-app-wine-trace/blob/main/modules.png)
+    ![追溯大屏](./images/modules.png)
 
 4. 数据接入企业节点，基于企业节点服务能力，形成标识数据关系图
+    ![追溯大屏](./images/relation.png)
 
 5. 从标识数据关系图中，选择一条数据链路，设计追溯路径
 
