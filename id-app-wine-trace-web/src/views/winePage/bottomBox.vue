@@ -138,22 +138,15 @@ $box-height: 304px;
   font-weight: 300;
   font-size: 16px;
 
-  // .text_left {
-  //   display: flex;
-  //   flex: 1;
-  //   height: 100%;
-  //   position: relative;
   & :nth-child(1) {
     color: #25bfff;
     margin-left: 58px;
   }
   & :nth-child(2) {
     width: calc(100% - 250px);
-    // position: absolute;
     margin-right: 58px;
     text-align: right;
   }
-  // }
 
   .text_right {
     width: 880px;

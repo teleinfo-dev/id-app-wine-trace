@@ -24,18 +24,6 @@ const hasMockPlugin = (isMock: boolean) => {
 export default defineConfig(({ command, mode }) => {
   return {
     mode: "development",
-    optimizeDeps: {
-      // 开发时 解决这些commonjs包转成esm包
-      include: [
-        "@jiaminghi/c-render",
-        "@jiaminghi/c-render/lib/plugin/util",
-        "@jiaminghi/charts/lib/util/index",
-        "@jiaminghi/charts/lib/util",
-        "@jiaminghi/charts/lib/extend/index",
-        "@jiaminghi/charts",
-        "@jiaminghi/color",
-      ],
-    },
     server: {
       open: true,
       fs: {
@@ -44,49 +32,11 @@ export default defineConfig(({ command, mode }) => {
       host: "0.0.0.0",
       port: 3002,
       proxy: {
-        "/server": {
-          // target: "http://server-platform-gateway-a.dev.idx.space",
-          // target: `http://10.14.150.182:9191/`,
-          changeOrigin: true,
-          agent: new https.Agent(),
-          followRedirects: true,
-          // rewrite: (path) => path.replace(/^\/server/, ""),
-        },
-
-        "/sso": {
-          target: "http://sso-auth-gateway-a.dev.idx.space",
-          // target: `http://10.14.148.103:9191`,
-          changeOrigin: true,
-          agent: new https.Agent(),
-          followRedirects: true,
-        },
         "/api/": {
-          // target: "http://operation-platform-gateway-a:80/",
           target: "http://id-wine-trace-server-dev.idx.space",
-          // target: `http://10.14.148.103:9191`,
           changeOrigin: true,
           agent: new https.Agent(),
           followRedirects: true,
-        },
-        "/inventory": {
-          // target: `http://10.14.150.182:9091`, // 亚涛
-          // target: `http://10.14.148.103:9191`, // 凯文
-          // target: `http://10.14.150.253:9092`, // 鹏飞
-          target: `http://id-wine-trace-server-dev.idx.space`,
-          // target: `http://operation-platform-gateway-a.dev.idx.space`,
-          changeOrigin: true,
-          agent: new https.Agent(),
-          // rewrite: (path) => path.replace(/^\/sync/, ''),
-        },
-        "/operation": {
-          target: `http://id-wine-trace-server-dev.idx.space`,
-          // target: "http://operation-platform-gateway-a.dev.idx.space",
-          // target: `http://10.14.150.182:9091`, // 亚涛
-          // target: `http://10.14.148.103:9191`, // 凯文
-          // target: `http://10.14.150.253:9092`, // 鹏飞
-          changeOrigin: true,
-          agent: new https.Agent(),
-          // rewrite: (path) => path.replace(/^\/api/, ''),
         },
       },
     },

@@ -10,7 +10,7 @@
           placeholder="请输入酒瓶标识码"
         />
         <img
-          src="@/assets/bg/sousuo.png"
+          src="@/assets/bg/search.png"
           alt=""
           class="images"
           @click="searchInput()"
@@ -28,16 +28,8 @@
 </template>
 
 <script lang="ts" setup>
-import {
-  ref,
-  defineProps,
-  reactive,
-  onMounted,
-  onUnmounted,
-  defineEmits,
-} from "vue";
+import { ref, reactive, onMounted, onUnmounted, defineEmits } from "vue";
 import { formatTime } from "@/utils/index";
-import { WEEK } from "@/constant/index";
 
 const handle = ref("");
 
@@ -51,8 +43,6 @@ const timeInfo = reactive({
   dateWeek: "",
 });
 
-const data = ref({});
-
 // todo 处理时间监听
 const handleTime = () => {
   timeInfo.setInterval = setInterval(() => {
@@ -63,10 +53,6 @@ const handleTime = () => {
   }, 1000);
 };
 const searchInput = () => {
-
-  // if (!handle.value) {
-  //   return;
-  // }
   emit("updateValue", handle.value);
 };
 
@@ -139,7 +125,6 @@ defineExpose({
       width: 118px;
       font-size: 24px;
       color: #ffffff;
-      // line-height: 73px;
       margin-left: 15px;
     }
     .header-month {

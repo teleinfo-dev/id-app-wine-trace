@@ -27,7 +27,6 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.24.5",
-    "echarts": "^5.1.1",
     "axios": "^0.24.0",
     "core-js": "^3.6.5",
     "vue": "^3.0.0",
@@ -36,7 +35,6 @@
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
-    "@types/mockjs": "^1.0.4",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
     "@typescript-eslint/parser": "^5.13.0",
     "@vitejs/plugin-vue": "^1.9.4",
@@ -60,7 +58,6 @@
     "eslint-plugin-vue": "^9.15.1",
     "husky": "^7.0.4",
     "lint-staged": "^11.2.6",
-    "mockjs": "^1.1.0",
     "sass": "^1.26.5",
     "sass-loader": "^12.6.0",
     "typescript": "~5.5.2",

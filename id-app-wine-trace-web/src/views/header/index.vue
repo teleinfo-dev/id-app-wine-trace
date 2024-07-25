@@ -16,6 +16,7 @@
 import { ref, defineProps, reactive, onMounted, onUnmounted } from "vue";
 import { formatTime } from "@/utils/index";
 import { WEEK } from "@/constant/index";
+
 // 传入title
 defineProps<{ title: string }>();
 // * 时间内容
@@ -25,7 +26,7 @@ const timeInfo = reactive({
   dateYear: "",
   dateWeek: "",
 });
-// todo 处理时间监听
+// 处理时间监听
 const handleTime = () => {
   timeInfo.setInterval = setInterval(() => {
     const date = new Date();

@@ -26,7 +26,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted, watch } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import { apiBidList } from "@/api/common";
 import useDraw from "@/utils/useDraw";
 import CenterBox from "./centerBox.vue";
@@ -56,8 +56,6 @@ const dataList = ref<Data>({
   values: [],
 });
 
-// methods
-// todo 处理 loading 展示
 const cancelLoading = () => {
   setTimeout(() => {
     loading.value = false;
@@ -114,12 +112,10 @@ onMounted(() => {
 
 onUnmounted(() => {
   unWindowDraw();
-  // clearInterval(timeInfo.setInterval)
 });
 </script>
 
 <style lang="scss" scoped>
-//@import "@/assets/scss/index.scss";
 #index {
   color: #d3d6dd;
   width: 1920px;
@@ -146,7 +142,6 @@ onUnmounted(() => {
     top: 0;
     z-index: 200;
     padding: 0 10px;
-    // background-color:  #00194F66;
   }
 
   // 提示样式
@@ -178,29 +173,7 @@ onUnmounted(() => {
       display: flex;
       flex: 1;
       margin-top: 20px;
-      //   background-color: rgb(74, 43, 43);
-      //下方区域的布局
-      .left__content-box,
-      .right__content-box {
-        position: relative;
-        // display: flex;
-        // width: 25%;
-        // height: 100%;
-        // flex-direction: column;
-        // align-items: flex-start;
-        // justify-content: space-between;
-        background-color: #1d52c466;
-        display: grid;
-        grid-template-rows: repeat(
-          auto-fill,
-          minmax(300px, 1fr)
-        ); /* 创建足够数量的行以填满容器 */
-        height: calc(100% - 100px); /* 容器高度 */
-        // gap: 10; /* 如果需要，设置网格项之间的间距 */
-        z-index: 200;
-      }
       .center__content-box {
-        // display: flex;
         width: 100%;
         height: calc(100% - 120px);
         flex-direction: column-reverse;
